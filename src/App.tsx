@@ -10,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
+          <Route path="*" element={<BlankText text="Nenhuma página encontrada"/>}/>
             <Route index element={<BlankText text="Bem vindo!" />} />
             <Route path="about" element={<BlankText text="Sobre nós" />} />
             <Route path="products" element={<Products />}>
@@ -27,6 +28,7 @@ function App() {
               />
             </Route>
           </Route>
+          
         </Routes>
       </BrowserRouter>
     </>
