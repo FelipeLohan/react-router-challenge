@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import HomeIcon from "../../../public/HomeIcon.svg";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   padding: 40px 0;
@@ -7,6 +8,10 @@ const HeaderContainer = styled.header`
   color: #fff;
 
   margin-bottom: 40px;
+
+  a{
+    color: #fff;
+  }
 `;
 
 const HeaderInsideBox = styled.div`
@@ -31,12 +36,20 @@ const Header = () => {
       <HeaderContainer>
         <HeaderInsideBox>
           <NavHeaderContainer>
-            <h2>Início</h2>
-            <h2>Produtos</h2>
-            <h2>Sobre nós</h2>
+            <Link to="/">
+              <h2>Início</h2>
+            </Link>
+            <Link to="/products">
+              <h2>Produtos</h2>
+            </Link>
+            <Link to="/about">
+              <h2>Sobre nós</h2>
+            </Link>
           </NavHeaderContainer>
           <IconHeaderContainer>
-            <img src={HomeIcon} alt="Home Icon" />
+            <Link to="/">
+              <img src={HomeIcon} alt="Home Icon" />
+            </Link>
           </IconHeaderContainer>
         </HeaderInsideBox>
       </HeaderContainer>
