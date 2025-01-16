@@ -1,0 +1,14 @@
+[
+  {
+    "category": "Computer",
+    "items": ["Computer 1", "Computer 2", "Computer 3"]
+  },
+  {
+    "category": "Eletronics",
+    "items": ["Eletronic 1", "Eletronic 2", "Eletronic 3"]
+  },
+  {
+    "category": "Books",
+    "items": ["Book 1", "Book 2", "Book 3"]
+  }
+]
