@@ -2,6 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 
+interface StyledLinkProps {
+  isActive?: boolean;
+}
 
 const CategoryNavBarContainer = styled.nav`
   width: 80%;
@@ -17,7 +20,7 @@ const CategoryNavBarContainer = styled.nav`
  
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<StyledLinkProps>`
   font-size: 18px;
   text-decoration: none;
   color: ${(props) => (props.isActive ? "#2d28ff" : "#000")};

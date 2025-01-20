@@ -2,7 +2,9 @@ import styled from "styled-components";
 import HomeIcon from "../../../public/HomeIcon.svg";
 import { Link, useLocation} from "react-router-dom";
 
-
+interface StyledLinkProps {
+  isActive?: boolean;
+}
 
 const HeaderContainer = styled.header`
   padding: 40px 0;
@@ -29,7 +31,7 @@ const IconHeaderContainer = styled.div`
 `;
 
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<StyledLinkProps>`
   font-size: 18px;
   text-decoration: none;
   color: ${(props) => (props.isActive ? "#fff" : "#000")};
