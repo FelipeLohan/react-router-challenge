@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+
+
 
 const CategoryNavBarContainer = styled.nav`
   width: 80%;
@@ -12,24 +14,37 @@ const CategoryNavBarContainer = styled.nav`
   display: flex;
   gap: 20px;
 
-  a {
-    color: #000;
+ 
+`;
+
+const StyledLink = styled(Link)`
+  font-size: 18px;
+  text-decoration: none;
+  color: ${(props) => (props.isActive ? "#2d28ff" : "#000")};
+  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
+  text-decoration: ${(props) => (props.isActive ? "underline" : "none")};
+
+  &:hover {
+    color: #2d28ff;
   }
 `;
 
 const CategoryNavBar = () => {
+
+  const location = useLocation();
+
   return (
     <>
       <CategoryNavBarContainer>
-        <Link to="/products/computers">
+        <StyledLink to="/products/computers" isActive={location.pathname === "/products/computers"}>
           <h3>Computadores</h3>
-        </Link>
-        <Link to="/products/electronics">
+        </StyledLink>
+        <StyledLink to="/products/electronics" isActive={location.pathname === "/products/electronics"}>
           <h3>Eletrônicos</h3>
-        </Link>
-        <Link to="/products/books">
+        </StyledLink>
+        <StyledLink to="/products/books" isActive={location.pathname === "/products/books"}>
           <h3>Livros</h3>
-        </Link>
+        </StyledLink>
       </CategoryNavBarContainer>
     </>
   );
