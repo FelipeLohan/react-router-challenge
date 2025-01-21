@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HomeIcon from "../../../public/HomeIcon.svg";
-import { Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface StyledLinkProps {
   isActive?: boolean;
@@ -11,7 +11,6 @@ const HeaderContainer = styled.header`
   background-color: #2d28ff;
   color: #fff;
   margin-bottom: 40px;
-
 `;
 
 const HeaderInsideBox = styled.div`
@@ -30,7 +29,6 @@ const IconHeaderContainer = styled.div`
   display: flex;
 `;
 
-
 const StyledLink = styled(Link)<StyledLinkProps>`
   font-size: 18px;
   text-decoration: none;
@@ -44,7 +42,7 @@ const StyledLink = styled(Link)<StyledLinkProps>`
 `;
 
 const Header = () => {
-  const location = useLocation(); // Correção na declaração do location
+  const location = useLocation();
 
   return (
     <HeaderContainer>
@@ -53,7 +51,15 @@ const Header = () => {
           <StyledLink to="/" isActive={location.pathname === "/"}>
             <h2>Início</h2>
           </StyledLink>
-          <StyledLink to="/products" isActive={location.pathname === "/products"}>
+          <StyledLink
+            to="/products"
+            isActive={
+              location.pathname === "/products" ||
+              location.pathname === "/products/computers" ||
+              location.pathname === "/products/electronics" ||
+              location.pathname === "/products/books"
+            }
+          >
             <h2>Produtos</h2>
           </StyledLink>
           <StyledLink to="/about" isActive={location.pathname === "/about"}>
